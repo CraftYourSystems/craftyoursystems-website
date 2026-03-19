@@ -297,13 +297,40 @@
 
     .contact .container[data-aos-delay="100"] {
       max-width: 980px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact .section-title,
+    .contact .section-title p {
+      text-align: center;
+    }
+
+    .contact .row {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .contact .col-lg-6.col-md-8.col-12.mx-auto {
+      width: 100%;
+      max-width: 720px;
+      flex: 0 0 100%;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact .info-wrap,
+    .contact .php-email-form {
+      max-width: 100%;
+      margin: 0 auto 30px;
+      padding: 2rem;
+      border-radius: 18px;
+      background: var(--surface-color);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
     }
 
     .contact .info-wrap {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 760px;
-      padding: 2rem;
       text-align: center;
     }
 
@@ -324,32 +351,33 @@
       margin-bottom: 0.5rem;
     }
 
-    .contact .php-email-form .row {
-      justify-content: center;
-      text-align: center;
-    }
-
-    .contact .php-email-form {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 2rem;
-      text-align: center;
-    }
-
     .contact .php-email-form .form-control {
       min-height: 54px;
       border-radius: 12px;
       padding: 0.85rem 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      box-shadow: none;
+    }
+
+    .contact .php-email-form .form-control:focus {
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
     }
 
     .contact .php-email-form textarea.form-control {
       min-height: 170px;
+      resize: vertical;
     }
 
-    .contact .php-email-form button[type="submit"] {
-      padding: 0.9rem 2rem;
+    .contact .php-email-form .btn.btn-primary {
+      min-height: 54px;
+      border-radius: 12px;
       font-weight: 600;
-      box-shadow: 0 14px 28px rgba(0, 120, 255, 0.18);
+      box-shadow: 0 12px 24px rgba(13, 110, 253, 0.2);
+    }
+
+    .contact .php-email-form .btn.btn-primary:hover {
+      box-shadow: 0 16px 28px rgba(13, 110, 253, 0.25);
     }
 
     .footer .container {
@@ -432,6 +460,11 @@
       .hero-btns a {
         width: 100%;
         max-width: 230px;
+      }
+
+      .contact .info-wrap,
+      .contact .php-email-form {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -651,46 +684,45 @@
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-lg-8">
-              <div class="info-item d-flex align-items-center">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8 col-12 mx-auto">
+            <div class="info-wrap text-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="info-item d-flex align-items-center justify-content-center">
                 <div>
                   <h3>Email Us</h3>
                   <p><a href="mailto:craftyoursystems@gmail.com">craftyoursystems@gmail.com</a></p>
                 </div>
               </div>
             </div>
+
+            <form action="https://formspree.io/f/mnjgwpzr" method="POST" class="php-email-form" data-aos="fade-up"
+              data-aos-delay="300">
+              <div class="mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+
+              <div class="mb-3">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+              </div>
+
+              <div class="mb-3">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+              </div>
+
+              <div class="mb-3">
+                <textarea name="message" class="form-control" rows="6" placeholder="Tell us about your project..."
+                  required></textarea>
+              </div>
+
+              <div class="text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              </div>
+            </form>
           </div>
         </div>
-
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
-          <div class="row gy-4 justify-content-center">
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-
-            <div class="col-md-6">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required>
-            </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
-            </div>
-
-            <div class="col-md-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Tell us about your project..."
-                required></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-              <button type="submit">Send Message</button>
-            </div>
-          </div>
-        </form>
       </div>
     </section>
   </main>
