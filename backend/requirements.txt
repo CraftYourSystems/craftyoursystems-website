@@ -1,0 +1,12 @@
+# Python dependencies for CraftYourSystems backend
+# Install all with:  pip install -r requirements.txt
+
+flask==3.0.3          # The web framework — handles routes, requests, responses
+flask-cors==4.0.1     # Allows frontend on a different domain to call this API
+psycopg2-binary==2.9.9 # PostgreSQL driver — lets Python talk to Postgres
+                        # "binary" = no need to compile C code locally
+PyJWT==2.8.0          # Creates and verifies JSON Web Tokens
+werkzeug==3.0.3       # Provides password hashing (generate_password_hash, check_password_hash)
+                        # Flask already uses Werkzeug internally, but we pin the version
+python-dotenv==1.0.1  # Reads .env files so secrets stay out of source code
+gunicorn==22.0.0      # Production WSGI server (use instead of Flask's dev server in production)
