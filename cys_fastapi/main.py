@@ -20,7 +20,7 @@ from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
 
-load_dotenv()  # reads your .env file
+load_dotenv(dotenv_path="cys_fastapi/.env")  # reads your .env file
 
 # Import route routers (equivalent to Flask Blueprints)
 from cys_fastapi.routes.auth import router as auth_router
