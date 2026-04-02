@@ -26,7 +26,7 @@ const EMAILJS_CONFIG = {
 };
 
 // ← CHANGED: 5000 → 8000 (FastAPI default port)
-const API = 'http://127.0.0.1:8000';
+const API = 'http://localhost:8000'; // or wherever your backend is hosted
 
 /* ============================================================
    AURORA CANVAS
@@ -164,7 +164,7 @@ const PROJECTS = [
    { title: "Return Spark", desc: "The official website for a small startup company to give customised return gifts and buy gifts", tags: ["HTML", "CSS", "JavaScript"], live: "", github: "", image: "images/Return_Spark.jpg", gradient: "linear-gradient(135deg,#2563eb,#7c3aed)", emoji: "🌐", status: "live" },
   { title: "RS Calligraphy Studio", desc: "Full Stack web app with integrated frontend and backend, including payment processing using Razorpay.and user and database management", tags: ["Flask", "PostgreSQL", "JWT","Razorpay"], live: "", github: "", image: "images/RS_Calligraphy_Studio.jpg", gradient: "linear-gradient(135deg,#059669,#0891b2)", emoji: "✍️", status: "wip" },
 ]
-const sL = { live: "🟢 Live", wip: "🟡 In Progress", done: "🔵 Completed" };
+const statusLabel = { live: "🟢 Live", wip: "🟡 In Progress", done: "🔵 Completed" };
 PROJECTS.forEach((p, i) => {
   const c = document.createElement('div');
   c.className = 'pcard';
@@ -204,9 +204,10 @@ if (window.matchMedia('(hover:hover)').matches) {
       const r = card.getBoundingClientRect(), x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5;
       card.style.transform = `translateY(-8px) rotateX(${-y*7}deg) rotateY(${x*7}deg)`;
     });
-    card.addEventListener('mouseleave', () => card.style.transform = '');
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 }
+
 
 /* ============================================================
    AUTH STATE
@@ -231,6 +232,11 @@ refreshAuthUI();
 
 function handleNavLogin() { getToken() ? doLogout() : openModal(); }
 function doLogout() { clearSession(); showCfStatus('Logged out.', 'ok'); }
+
+function handleNavSignup() { 
+  openModal(); 
+  switchMTab('signup'); 
+}
 
 /* ============================================================
    AUTH MODAL
