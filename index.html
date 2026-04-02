@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8"/>
+    <!-- <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <meta name="title" content="CraftYourSystems | Modern Web & Software Development">
     <meta name="description" content="We design and build fast, modern websites and custom software systems to help businesses grow their online presence—without the large agency overhead.">
@@ -17,6 +17,14 @@
     <meta property="twitter:title" content="CraftYourSystems | We build for businesses ready to grow.">
     <meta property="twitter:description" content="Student-led, professional-grade. We design and build fast, modern websites and software systems for businesses.">
     <meta property="twitter:image" content="https://www.craftyoursystems.com/images/full-logo.png">
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        connect-src 'self' http://127.0.0.1:8000;
+        script-src 'self' 'unsafe-inline';
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+        font-src 'self' https://fonts.gstatic.com;
+        img-src 'self' data:;
+        "> -->
 
     <link rel="canonical" href="https://craftyoursystems.in/">
     <title>CraftYourSystems | Modern Web & Software Development</title>
@@ -218,7 +226,7 @@
           </a>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script src="cys_fastapi/js/main.js"></script>
     <link rel="icon" type="image/png" href="images/logo-single-black.png">
   </body>
 </html>
