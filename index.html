@@ -17,6 +17,242 @@
     <meta property="twitter:title" content="CraftYourSystems | We build for businesses ready to grow.">
     <meta property="twitter:description" content="Student-led, professional-grade. We design and build fast, modern websites and software systems for businesses.">
     <meta property="twitter:image" content="https://www.craftyoursystems.com/images/full-logo.png">
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+          (function() {
+            // Standard EmailJS initialization
+            emailjs.init("7BKlkbs1nP2ur7umH"); // Your public key
+          })();
+        </script>
+
+    <link rel="canonical" href="https://craftyoursystems.in/">
+    <title>CraftYourSystems | Modern Web & Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div id="cur"><div id="cur-ring"></div><div id="cur-dot"></div></div>
+
+    <!-- Auth Modal -->
+    <div class="modal-overlay" id="auth-modal">
+      <div class="modal-bg" onclick="closeModal()"></div>
+      <div class="modal">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <h2 id="modal-title">Sign in to send</h2>
+        <p class="modal-sub" id="modal-sub">Create a free account or log in to send your message securely to our team.</p>
+        <div class="modal-tabs">
+          <button class="mtab active" onclick="switchMTab('login')">Log In</button>
+          <button class="mtab" onclick="switchMTab('signup')">Sign Up</button>
+        </div>
+        <div class="mpanel active" id="mp-login">
+          <input class="finput" type="email" id="li-email" placeholder="Email" style="margin-bottom:14px">
+          <input class="finput" type="password" id="li-pass" placeholder="Password">
+          <button class="fsubmit" id="login-btn" onclick="doLogin()" style="margin-top:14px">Log In →</button>
+          <div class="auth-status" id="login-status"></div>
+        </div>
+        <div class="mpanel" id="mp-signup">
+          <input class="finput" type="email" id="su-email" placeholder="Email" style="margin-bottom:14px">
+          <input class="finput" type="password" id="su-pass" placeholder="Password (min. 6 chars)">
+          <button class="fsubmit" id="signup-btn" onclick="doSignup()" style="margin-top:14px">Create Account →</button>
+          <div class="auth-status" id="signup-status"></div>
+        </div>
+        <p class="modal-footer" id="modal-footer-txt">Don't have an account? <a onclick="switchMTab('signup')">Sign Up free</a></p>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mob-menu" id="mm">
+      <a href="#hero" onclick="closeMM()">Home</a>
+      <a href="#about" onclick="closeMM()">About</a>
+      <a href="#services" onclick="closeMM()">What We Build</a>
+      <a href="#portfolio" onclick="closeMM()">Our Work</a>
+      <a href="#team" onclick="closeMM()">Team</a>
+      <a href="#contact" onclick="closeMM()">Contact</a>
+      <div class="mm-auth" style="display:flex;flex-direction:column;gap:12px;margin-top:20px;width:240px">
+        <button class="mm-btn mm-btn-login" id="mm-login" onclick="openModal('login');closeMM()">Log In</button>
+        <button class="mm-btn mm-btn-signup" id="mm-signup" onclick="openModal('signup');closeMM()">Sign Up free</button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="nav">
+      <a href="#" class="logo">
+        <img src="images/logo-single.png" alt="CraftYourSystems logo icon">
+        <p>Craft<em>Your</em>Systems</p>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">What We Build</a></li>
+        <li><a href="#portfolio">Our Work</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact" class="nbtn">Contact Us</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:10px">
+        <button class="nav-login-btn" id="nav-login-btn" onclick="handleNavLogin()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          <span id="nav-login-label">Log In</span>
+        </button>
+        <button class="nav-signup-btn" id="nav-signup-btn" onclick="handleNavSignup()">Sign Up</button>
+        <button class="ham" id="ham"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+
+    <!-- HERO — badge removed as requested -->
+    <section id="hero">
+      <div id="aurora-wrap"><canvas id="aurora"></canvas></div>
+      <div class="hinner">
+        <h1 class="htitle" id="ht"></h1>
+        <p class="hsub">We design and build fast, modern websites and software systems that help businesses grow their online presence — without the overhead of large agencies.</p>
+        <div class="hbtns">
+          <a href="#portfolio" class="btn-p">View Our Work →</a>
+          <a href="#contact" class="btn-s">Get in Touch</a>
+        </div>
+      </div>
+      <div class="scroll-ind"><p>Scroll</p><div class="sline"></div></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="rv">
+          <span class="sec-lbl">About Us</span>
+          <h2 class="sec-title" style="text-align:left;margin-bottom:16px">We build for businesses<br>ready to <span class="gtxt">grow.</span></h2>
+          <p style="color:var(--muted);line-height:1.8;font-size:15px;margin-bottom:14px">CraftYourSystems is a student-led development team focused on building modern websites and practical software systems for businesses. Our team consists of student developers from leading engineering colleges across Hyderabad.</p>
+          <p style="color:var(--muted);line-height:1.8;font-size:15px;margin-bottom:14px">Whether you need a polished business website, a high-converting landing page, or a custom web platform — we scope, design, and ship it with care.</p>
+          <p style="color:var(--muted);line-height:1.8;font-size:15px">Our goal is simple: help businesses establish a strong online presence without the overhead of large agencies.</p>
+          <div class="about-tags">
+            <span class="tag">Modern Design</span><span class="tag">Clean Code</span>
+            <span class="tag">Mobile-First</span><span class="tag">Fast Delivery</span>
+          </div>
+        </div>
+        <div class="aright rv" style="transition-delay:.15s">
+          <div class="acard"><div class="num">5</div><div class="lbl">Core team members</div></div>
+          <div class="acard"><div class="num">4+</div><div class="lbl">Colleges represented</div></div>
+          <div class="acard"><div class="num">100%</div><div class="lbl">Built with care</div></div>
+          <div class="acard"><div class="num">∞</div><div class="lbl">Ideas to bring to life</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="sec-head rv">
+        <span class="sec-lbl">What We Build</span>
+        <h2 class="sec-title">A focused set of services<br>tailored for <span class="gtxt">growing businesses</span></h2>
+        <p class="sec-sub">We keep our services sharp so we can deliver each one exceptionally well.</p>
+      </div>
+      <div class="fgrid" id="fg"></div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+      <div class="sec-head rv">
+        <span class="sec-lbl">Our Work</span>
+        <h2 class="sec-title">Real projects,<br><span class="gtxt">real results</span></h2>
+        <p class="sec-sub">A selection of websites and platforms we've designed and built.</p>
+      </div>
+      <div class="pgrid" id="pg"></div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <div class="sec-head rv">
+        <span class="sec-lbl">Our Team</span>
+        <h2 class="sec-title">The people behind<br><span class="gtxt">CraftYourSystems</span></h2>
+        <p class="sec-sub">A focused team of student developers combining design, development, and strategy.</p>
+      </div>
+      <div class="tgrid" id="tg"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="orb orb1"></div><div class="orb orb2"></div>
+      <div class="cinner rv">
+        <span class="clbl">Get In Touch</span>
+        <h2 class="ctitle">Have a project<br>in mind?</h2>
+        <p class="csub">Fill in the form below — we'll ask you to log in when you hit send, so we know it's really you.</p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="cc-icon">✉️</div>
+            <div class="cc-lbl">Email Us</div>
+            <a href="mailto:craftyoursystems@gmail.com">craftyoursystems@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <div class="cc-icon">💬</div>
+            <div class="cc-lbl">WhatsApp</div>
+            <a href="https://wa.me/919645312345" target="_blank">Chat with us</a>
+          </div>
+        </div>
+        <div class="cform-wrap">
+          <h3>Send us a message</h3>
+          <p>Tell us about your project. We'll ask you to log in when you click send.</p>
+          <div class="frow">
+            <input class="finput" type="text" id="cf-name" placeholder="Your Name">
+            <input class="finput" type="email" id="cf-email" placeholder="Your Email">
+          </div>
+          <input class="finput finput-full" type="text" id="cf-subject" placeholder="Subject — e.g. Business Website">
+          <textarea class="finput finput-full" id="cf-msg" placeholder="Tell us about your project, budget, and timeline..."></textarea>
+          <div id="logged-bar" style="display:none;align-items:center;justify-content:space-between;background:var(--accent-light);border:1px solid rgba(37,99,235,.2);border-radius:12px;padding:10px 16px;margin-bottom:14px">
+            <span id="logged-label" style="font-size:13px;font-weight:600;color:var(--accent)"></span>
+            <button onclick="doLogout()" style="font-size:12px;font-weight:700;color:var(--muted);background:none;border:1px solid var(--border);border-radius:100px;padding:4px 12px;cursor:none;font-family:'Inter',sans-serif">Log out</button>
+          </div>
+          <button class="fsubmit" id="cf-submit" onclick="handleFormSend()">Send Message →</button>
+          <div class="auth-status" id="cf-status"></div>
+          <p class="form-note">We'll respond within 24 hours · <a onclick="openModal()">Already have an account? Log in</a></p>
+        </div>
+        <div class="wa-row">
+          <a href="https://wa.me/919645312345?text=Hi%2C%20I%20found%20CraftYourSystems%20and%20I'm%20interested%20in%20a%20website" target="_blank" class="wa-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <a href="#" class="flogo">
+        <img src="images/logo-single.png" alt="CraftYourSystems">
+        <p>Craft<em>Your</em>Systems</p>
+      </a>
+      <span class="fcopy">© 2025 CraftYourSystems. All Rights Reserved.</span>
+        <div class="flinks">
+          <a href="https://github.com/CraftYourSystems" title="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="#" title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="#" title="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <link rel="icon" type="image/png" href="images/logo-single-black.png">
+  </body>
+</html><!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta name="title" content="CraftYourSystems | Modern Web & Software Development">
+    <meta name="description" content="We design and build fast, modern websites and custom software systems to help businesses grow their online presence—without the large agency overhead.">
+    <meta name="keywords" content="web development, software development, business websites, landing pages, custom web platforms, student developers, frontend, UI/UX">
+    <meta name="author" content="CraftYourSystems">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#7c3aed"> <meta property="og:type" content="website">
+    <meta property="og:url" content="https://craftyoursystems.in/"> <meta property="og:title" content="CraftYourSystems | Modern Web & Software Development">
+    <meta property="og:description" content="Expertly crafted websites and web platforms tailored for growing businesses. Built with care, clean code, and modern design.">
+    <meta property="og:image" content="https://www.craftyoursystems.com/images/full-logo.png"> <meta property="og:site_name" content="CraftYourSystems">
+    <meta property="og:locale" content="en_US"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.craftyoursystems.in/">
+    <meta property="twitter:title" content="CraftYourSystems | We build for businesses ready to grow.">
+    <meta property="twitter:description" content="Student-led, professional-grade. We design and build fast, modern websites and software systems for businesses.">
+    <meta property="twitter:image" content="https://www.craftyoursystems.com/images/full-logo.png">
     <meta http-equiv="Content-Security-Policy" content="
         default-src 'self';
         connect-src 'self' https://craftyoursystems.in;
