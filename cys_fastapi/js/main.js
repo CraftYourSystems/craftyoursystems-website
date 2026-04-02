@@ -26,7 +26,7 @@ const EMAILJS_CONFIG = {
 };
 
 // ← CHANGED: 5000 → 8000 (FastAPI default port)
-const API = 'http://127.0.0.1:8000';
+const API = 'https://api.craftyoursystems.in'; // or wherever your backend is hosted
 
 /* ============================================================
    AURORA CANVAS
