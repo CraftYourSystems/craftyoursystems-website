@@ -164,7 +164,7 @@ const PROJECTS = [
    { title: "Return Spark", desc: "The official website for a small startup company to give customised return gifts and buy gifts", tags: ["HTML", "CSS", "JavaScript"], live: "", github: "", image: "images/Return_Spark.jpg", gradient: "linear-gradient(135deg,#2563eb,#7c3aed)", emoji: "🌐", status: "live" },
   { title: "RS Calligraphy Studio", desc: "Full Stack web app with integrated frontend and backend, including payment processing using Razorpay.and user and database management", tags: ["Flask", "PostgreSQL", "JWT","Razorpay"], live: "", github: "", image: "images/RS_Calligraphy_Studio.jpg", gradient: "linear-gradient(135deg,#059669,#0891b2)", emoji: "✍️", status: "wip" },
 ]
-const sL = { live: "🟢 Live", wip: "🟡 In Progress", done: "🔵 Completed" };
+const statusLabel = { live: "🟢 Live", wip: "🟡 In Progress", done: "🔵 Completed" };
 PROJECTS.forEach((p, i) => {
   const c = document.createElement('div');
   c.className = 'pcard';
@@ -208,6 +208,7 @@ if (window.matchMedia('(hover:hover)').matches) {
   });
 }
 
+
 /* ============================================================
    AUTH STATE
    ============================================================ */
@@ -231,6 +232,11 @@ refreshAuthUI();
 
 function handleNavLogin() { getToken() ? doLogout() : openModal(); }
 function doLogout() { clearSession(); showCfStatus('Logged out.', 'ok'); }
+
+function handleNavSignup() { 
+  openModal(); 
+  switchMTab('signup'); 
+}
 
 /* ============================================================
    AUTH MODAL
