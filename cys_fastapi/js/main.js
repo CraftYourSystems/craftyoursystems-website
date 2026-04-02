@@ -161,10 +161,10 @@ window.addEventListener('scroll', () => { document.getElementById('nav').classLi
    PORTFOLIO
    ============================================================ */
 const PROJECTS = [
-  { title: 'CraftYourSystems Website', desc: 'The official portfolio website — built with clean HTML/CSS/JS, fully responsive.', tags: ['HTML', 'CSS', 'JavaScript'], live: 'https://craftyoursystems.in', github: 'https://github.com/CraftYourSystems', image: '', gradient: 'linear-gradient(135deg,#2563eb,#7c3aed)', emoji: '🌐', status: 'live' },
-  { title: 'OOTA — Secure Messaging', desc: 'Full-stack web app with JWT auth, PostgreSQL storage, and a clean UI for secure communications.', tags: ['FastAPI', 'PostgreSQL', 'JWT'], live: '', github: 'https://github.com/CraftYourSystems', image: '', gradient: 'linear-gradient(135deg,#059669,#0891b2)', emoji: '🔐', status: 'wip' },
-];
-const statusLabel = { live: '🟢 Live', wip: '🟡 In Progress', done: '🔵 Completed' };
+   { title: "Return Spark", desc: "The official website for a small startup company to give customised return gifts and buy gifts", tags: ["HTML", "CSS", "JavaScript"], live: "", github: "", image: "images/Return_Spark.jpg", gradient: "linear-gradient(135deg,#2563eb,#7c3aed)", emoji: "🌐", status: "live" },
+  { title: "RS Calligraphy Studio", desc: "Full Stack web app with integrated frontend and backend, including payment processing using Razorpay.and user and database management", tags: ["Flask", "PostgreSQL", "JWT","Razorpay"], live: "", github: "", image: "images/RS_Calligraphy_Studio.jpg", gradient: "linear-gradient(135deg,#059669,#0891b2)", emoji: "✍️", status: "wip" },
+]
+const sL = { live: "🟢 Live", wip: "🟡 In Progress", done: "🔵 Completed" };
 PROJECTS.forEach((p, i) => {
   const c = document.createElement('div');
   c.className = 'pcard';
