@@ -141,8 +141,8 @@ window.addEventListener('scroll', () => document.getElementById('nav').classList
    PORTFOLIO — add more projects here
 ============================== */
 const PROJECTS = [
-  { title: "CraftYourSystems Website", desc: "The official portfolio website for our development team — built with clean HTML/CSS/JS, fully responsive.", tags: ["HTML", "CSS", "JavaScript"], live: "https://craftyoursystems.com", github: "https://github.com/CraftYourSystems", image: "", gradient: "linear-gradient(135deg,#2563eb,#7c3aed)", emoji: "🌐", status: "live" },
-  { title: "OOTA — Secure Messaging", desc: "Full-stack web app with JWT auth, PostgreSQL storage, and a clean UI for secure client communications.", tags: ["Flask", "PostgreSQL", "JWT"], live: "", github: "https://github.com/CraftYourSystems", image: "", gradient: "linear-gradient(135deg,#059669,#0891b2)", emoji: "🔐", status: "wip" },
+  { title: "Return Spark", desc: "The official website for a small startup company to give customised return gifts and buy gifts", tags: ["HTML", "CSS", "JavaScript"], live: "", github: "", image: "images/Return_Spark.jpg", gradient: "linear-gradient(135deg,#2563eb,#7c3aed)", emoji: "🌐", status: "live" },
+  { title: "RS Calligraphy Studio", desc: "Full Stack web app with integrated frontend and backend, including payment processing using Razorpay.and user and database management", tags: ["Flask", "PostgreSQL", "JWT","Razorpay"], live: "", github: "", image: "images/RS_Calligraphy_Studio.jpg", gradient: "linear-gradient(135deg,#059669,#0891b2)", emoji: "✍️", status: "wip" },
   // Add more: { title:"", desc:"", tags:[], live:"", github:"", image:"", gradient:"linear-gradient(135deg,#f59e0b,#ef4444)", emoji:"🚀", status:"live" }
 ];
 
