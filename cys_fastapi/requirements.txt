@@ -1,0 +1,17 @@
+# Python dependencies — install with: pip install -r requirements.txt
+
+fastapi==0.111.0          # The web framework (replaces Flask)
+uvicorn[standard]==0.29.0  # ASGI server that runs FastAPI
+                            # (replaces Flask's built-in dev server)
+                            # [standard] adds auto-reload + speed extras
+
+psycopg2-binary==2.9.9    # PostgreSQL driver (same as Flask version)
+PyJWT==2.8.0              # JWT creation and verification (same)
+passlib[bcrypt]==1.7.4    # Password hashing with bcrypt
+                            # (replaces Werkzeug's pbkdf2)
+                            # [bcrypt] installs the bcrypt algorithm
+
+pydantic[email]==2.7.1    # Data validation (built into FastAPI)
+                            # [email] adds EmailStr validator
+pydantic-settings==2.3.0  # Reads settings from .env file
+python-dotenv==1.0.1      # Loads .env into environment variables
